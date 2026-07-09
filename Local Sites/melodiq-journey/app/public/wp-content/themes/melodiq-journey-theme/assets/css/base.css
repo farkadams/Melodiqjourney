@@ -1,0 +1,57 @@
+
+
+:root {
+  --bg: #06080b;
+  --surface: #10151d;
+  --surface-2: #161c26;
+  --primary: #27d9f8;
+  --text: #ffffff;
+  --muted: #9ca7b5;
+  --border: rgba(255,255,255,.08);
+  --radius: 24px;
+  --container: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+picture {
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}

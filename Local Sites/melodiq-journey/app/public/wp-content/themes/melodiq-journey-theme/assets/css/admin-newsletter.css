@@ -1,0 +1,91 @@
+.melodiq-newsletter-send {
+    max-width: 980px;
+}
+
+.melodiq-newsletter-send > p {
+    max-width: 760px;
+    color: #55616f;
+    font-size: 14px;
+}
+
+.melodiq-newsletter-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 220px));
+    gap: 14px;
+    margin: 22px 0 18px;
+}
+
+.melodiq-newsletter-summary div {
+    padding: 18px 20px;
+    border: 1px solid #d7dde4;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.melodiq-newsletter-summary strong {
+    display: block;
+    color: #101820;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.melodiq-newsletter-summary span {
+    display: block;
+    margin-top: 8px;
+    color: #647181;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.melodiq-newsletter-form {
+    padding: 22px;
+    border: 1px solid #d7dde4;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.melodiq-newsletter-form .form-table th {
+    width: 150px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.melodiq-newsletter-form .regular-text {
+    width: min(100%, 620px);
+}
+
+.melodiq-newsletter-form .wp-editor-wrap {
+    max-width: 760px;
+}
+
+.melodiq-newsletter-form .wp-editor-area,
+.melodiq-newsletter-form .mce-content-body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.melodiq-newsletter-form .submit {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media (max-width: 782px) {
+    .melodiq-newsletter-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .melodiq-newsletter-form {
+        padding: 16px;
+    }
+
+    .melodiq-newsletter-form .submit {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

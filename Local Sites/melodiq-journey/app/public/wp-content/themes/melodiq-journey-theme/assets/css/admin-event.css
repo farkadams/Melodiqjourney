@@ -1,0 +1,145 @@
+/* =====================================
+   EVENT ADMIN
+===================================== */
+
+.melodiq-admin-event-panel {
+    display: grid;
+    gap: 16px;
+    margin: -6px -12px -12px;
+    padding: 18px;
+    background: #f6f7f7;
+}
+
+.melodiq-admin-event-section {
+    display: grid;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.melodiq-admin-event-section-heading h3 {
+    margin: 0;
+    color: #1d2327;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.melodiq-admin-event-section-heading p {
+    max-width: 760px;
+    margin: 6px 0 0;
+    color: #646970;
+}
+
+.melodiq-admin-event-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.melodiq-admin-event-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.melodiq-admin-event-field {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+}
+
+.melodiq-admin-event-field span,
+.melodiq-admin-event-toggle strong {
+    color: #1d2327;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.melodiq-admin-event-field input[type="date"],
+.melodiq-admin-event-field input[type="email"],
+.melodiq-admin-event-field input[type="number"],
+.melodiq-admin-event-field input[type="text"],
+.melodiq-admin-event-field input[type="url"],
+.melodiq-admin-event-field select,
+.melodiq-admin-event-field textarea {
+    width: 100%;
+    border-color: #c3c4c7;
+    border-radius: 6px;
+}
+
+.melodiq-admin-event-field input[type="date"],
+.melodiq-admin-event-field input[type="email"],
+.melodiq-admin-event-field input[type="number"],
+.melodiq-admin-event-field input[type="text"],
+.melodiq-admin-event-field input[type="url"],
+.melodiq-admin-event-field select:not([multiple]) {
+    min-height: 38px;
+}
+
+.melodiq-admin-event-field select[multiple] {
+    min-height: 116px;
+    padding: 6px;
+}
+
+.melodiq-admin-event-field textarea {
+    min-height: 82px;
+    resize: vertical;
+}
+
+.melodiq-admin-event-field small,
+.melodiq-admin-event-toggle small {
+    color: #646970;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.melodiq-admin-event-toggle {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 2px 0 0;
+    padding: 14px;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    background: #f6f7f7;
+}
+
+.melodiq-admin-event-toggle input {
+    margin-top: 1px;
+}
+
+.melodiq-admin-event-toggle span {
+    display: grid;
+    gap: 3px;
+}
+
+.melodiq-admin-partner-preview,
+.melodiq-admin-partner-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.melodiq-admin-partner-preview img,
+.melodiq-admin-partner-gallery img {
+    width: 86px;
+    height: 86px;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    background: #f6f7f7;
+    object-fit: cover;
+}
+
+@media (max-width: 782px) {
+    .melodiq-admin-event-panel {
+        margin-right: -10px;
+        margin-left: -10px;
+        padding: 14px;
+    }
+
+    .melodiq-admin-event-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
