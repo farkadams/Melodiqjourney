@@ -1,9 +1,411 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-    <title>Melodiq Journey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melodiq Journey | Hamarosan indulunk</title>
+<meta name="description" content="Melodiq Journey – A magyar melodic techno közösség. Hamarosan indulunk 2026 augusztusában.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0B0F12;
+    --card:rgba(255,255,255,0.055);
+    --border:rgba(255,255,255,0.12);
+    --text:#FFFFFF;
+    --muted:#9AA4AE;
+    --accent:#2EE6D6;
+    --accent-hover:#5CF0E4;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:
+    radial-gradient(circle at 50% 38%, rgba(46,230,214,.14), transparent 22%),
+    radial-gradient(circle at 18% 20%, rgba(46,230,214,.10), transparent 30%),
+    radial-gradient(circle at 82% 78%, rgba(46,230,214,.08), transparent 28%),
+    linear-gradient(135deg,#0B0F12 0%,#050708 100%);
+    color:var(--text);
+    font-family:'Space Grotesk', Inter, sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0.08;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+.page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:32px 20px 24px;
+    position:relative;
+}
+
+.top-socials{
+    position:absolute;
+    top:24px;
+    right:24px;
+    display:flex;
+    gap:14px;
+    z-index:10;
+}
+
+.top-socials a{
+    opacity:.9;
+    transition:.25s ease;
+}
+
+.top-socials a:hover{
+    opacity:1;
+    transform:translateY(-2px);
+}
+
+.top-socials img{
+    width:22px;
+    height:22px;
+    filter:brightness(0) invert(1);
+}
+
+.hero{
+    width:100%;
+    max-width:960px;
+    margin:0 auto;
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.launch-card{
+    width:100%;
+    max-width:760px;
+    padding:20px;
+    background:transparent;
+    border:none;
+    border-radius:0;
+    backdrop-filter:none;
+    box-shadow:none;
+    animation:fadeUp 0.6s ease forwards;
+}
+
+.logo{
+    width:165px;
+    max-width:42vw;
+    height:auto;
+    margin:0 auto 34px;
+    display:block;
+}
+
+.eyebrow{
+    margin:0 0 10px;
+    color:var(--accent);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+}
+
+h1{
+    margin:0;
+    font-size:clamp(64px, 9vw, 108px);
+    line-height:0.95;
+    font-weight:700;
+    letter-spacing:-0.04em;
+    text-transform:uppercase;
+}
+
+.date{
+    margin:22px 0 0;
+    color:var(--muted);
+    font-size:clamp(18px, 3vw, 24px);
+    font-weight:500;
+}
+
+.brand{
+    margin:28px 0 0;
+    font-size:clamp(24px, 4vw, 36px);
+    font-weight:600;
+    letter-spacing:-0.03em;
+}
+
+.tagline{
+    margin:12px auto 0;
+    max-width:560px;
+    color:var(--muted);
+    font-size:clamp(16px, 2.5vw, 20px);
+    line-height:1.6;
+}
+
+.newsletter{
+    width:100%;
+    max-width:560px;
+    margin:38px auto 0;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:12px;
+    padding:8px;
+    background:rgba(0,0,0,.28);
+    border:1px solid var(--border);
+    border-radius:20px;
+}
+
+.newsletter .input-wrap{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.newsletter .input-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(10,12,14,.92);
+    border-radius:14px;
+    z-index:0;
+}
+
+.newsletter .input-wrap input{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+    min-height:52px;
+    display:block;
+    border:0 !important;
+    outline:0 !important;
+    background:transparent !important;
+    color:var(--text);
+    font:inherit;
+    padding:15px 16px;
+    -webkit-appearance:none;
+    appearance:none;
+}
+
+.newsletter .input-wrap input:-webkit-autofill,
+.newsletter .input-wrap input:-webkit-autofill:hover,
+.newsletter .input-wrap input:-webkit-autofill:focus,
+.newsletter .input-wrap input:-webkit-autofill:active{
+    -webkit-text-fill-color:#FFFFFF !important;
+    caret-color:#FFFFFF;
+    -webkit-box-shadow:0 0 0 1000px rgba(10,12,14,.92) inset !important;
+    box-shadow:0 0 0 1000px rgba(10,12,14,.92) inset !important;
+    border:0 !important;
+    transition:background-color 50000s ease-in-out 0s;
+}
+
+.newsletter input::placeholder{
+    color:rgba(154,164,174,0.85);
+}
+
+.newsletter button{
+    border:1px solid rgba(115,238,255,0.55);
+    border-radius:15px;
+    background:linear-gradient(135deg, rgba(46,230,214,0.22), rgba(62,168,255,0.16));
+    color:#E9FCFF;
+    font:inherit;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:15px 24px;
+    cursor:pointer;
+    white-space:nowrap;
+    backdrop-filter:blur(18px);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.22),
+        0 0 28px rgba(46,230,214,0.18),
+        0 12px 36px rgba(0,0,0,0.32);
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    min-width:136px;
+}
+
+.newsletter button:hover{
+    background:linear-gradient(135deg, rgba(46,230,214,0.34), rgba(62,168,255,0.28));
+    border-color:rgba(145,245,255,0.9);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.28),
+        0 0 38px rgba(46,230,214,0.28),
+        0 16px 42px rgba(0,0,0,0.38);
+    transform:translateY(-2px);
+}
+.newsletter button:disabled{
+    opacity:.75;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.input--hidden{
+    display:none !important;
+}
+
+.sib-form-message-panel{
+    display:none;
+    max-width:560px;
+    margin:18px auto 0;
+    padding:14px 18px;
+    border-radius:16px;
+    font-size:14px;
+    line-height:1.5;
+    text-align:center;
+    backdrop-filter:blur(18px);
+}
+
+#success-message{
+    color:#DFFFFA;
+    background:rgba(46,230,214,.12);
+    border:1px solid rgba(46,230,214,.35);
+}
+
+#error-message{
+    color:#FFECEC;
+    background:rgba(255,73,73,.12);
+    border:1px solid rgba(255,73,73,.35);
+}
+
+.entry__error{
+    display:block;
+    margin-top:10px;
+    color:#FFECEC;
+    font-size:13px;
+    text-align:center;
+}
+
+.footer{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding-top:28px;
+    color:rgba(154,164,174,0.78);
+    font-size:13px;
+    line-height:1.6;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:680px){
+    .page{
+        padding:18px 14px 20px;
+    }
+
+    .launch-card{
+        padding:20px 12px;
+    }
+
+    .logo{
+        width:112px;
+        margin-bottom:28px;
+    }
+
+    .newsletter{
+        grid-template-columns:1fr;
+        padding:10px;
+        border-radius:18px;
+    }
+
+    .newsletter input,
+    .newsletter button{
+        width:100%;
+        text-align:center;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>Coming Soon</h1>
+<main class="page">
+    <div class="top-socials">
+        <a href="https://www.instagram.com/melodiq.journey/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/share/g/1EGuWiEpaF/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.tiktok.com/@melodiq.journey" target="_blank" rel="noopener" aria-label="Tiktok">
+            <img src="tiktok.png" alt="Tiktok">
+        </a>
+    </div>
+    <section class="hero" aria-label="Melodiq Journey induló oldal">
+        <div class="launch-card">
+            <img src="logo.png" class="logo" alt="Melodiq Journey logó">
+
+            <p class="eyebrow">ÚJ FEJEZET</p>
+            <h1>AUGUSZTUS</h1>
+
+            <p class="brand">Melodiq Journey</p>
+            <p class="tagline">A MAGYAR MELODIC TECHNO KÖZÖSSÉG.</p>
+
+            <div id="error-message" class="sib-form-message-panel">
+                Hiba történt a feliratkozás során. Kérjük, próbáld újra néhány perc múlva.
+            </div>
+
+            <div id="success-message" class="sib-form-message-panel">
+                Köszönjük a feliratkozást! Kérjük, ellenőrizd az e-mail fiókodat, és kattints a megerősítő linkre. Hamarosan találkozunk!
+            </div>
+
+            <form id="sib-form" class="newsletter" method="POST" target="brevo-hidden-frame" action="https://66e81488.sibforms.com/serve/MUIFAOHpS7k6C2W7Y1tnFRBJH98puLBePGAwb-fF0JJByoMpXPX-2wvUXJQ6G_uD1xge_bsoTzc043OXE0TVPae2EQlUcubQVCtvXFw2lYndNuj1i2UubcAcCnvHUsisrtqAXRd7GaW7HyQWqdppXsCJXg1eP2hXr9ko2ozM6r3IXx8cJ7mundYZhMDBG-qAMK_SUfSlFt2bEm_Xbg==">
+                <div class="input-wrap">
+                    <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="Email címed" aria-label="Email címed" data-required="true" required>
+                </div>
+                <button type="submit">Értesítés</button>
+                <input type="text" name="email_address_check" value="" class="input--hidden">
+                <input type="hidden" name="locale" value="hu">
+            </form>
+            <iframe name="brevo-hidden-frame" style="display:none;" title="Brevo form submit"></iframe>
+            <label class="entry__error entry__error--primary"></label>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2026 Melodiq Journey<br>
+        A MAGYAR MELODIC TECHNO KÖZÖSSÉG.
+    </footer>
+</main>
+<script>
+const newsletterForm = document.getElementById('sib-form');
+const successMessage = document.getElementById('success-message');
+const errorMessage = document.getElementById('error-message');
+
+newsletterForm.addEventListener('submit', function () {
+    errorMessage.style.display = 'none';
+    successMessage.style.display = 'block';
+    newsletterForm.querySelector('button').textContent = 'Elküldve';
+    newsletterForm.querySelector('button').disabled = true;
+});
+</script>
 </body>
 </html>
